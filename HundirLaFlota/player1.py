@@ -1,10 +1,10 @@
 import player2
-
+import time
 
 def player1(tablero_disparos_jugador, tablero_disparos_maquina, tablero_vacio, tablero_vacio2):
     while 'O' in tablero_disparos_jugador and 'O' in tablero_disparos_maquina:
         try:
-
+            print('Tablero de la maquina\n',tablero_vacio)
             x = int(input('J1, Introduce coordenada X'))
             if x < 0 or x > 9:
                 print('Num. no valido, tira otra vez')
@@ -23,6 +23,7 @@ def player1(tablero_disparos_jugador, tablero_disparos_maquina, tablero_vacio, t
                 tablero_disparos_jugador[x, y] = '-'
                 tablero_vacio[x, y] = '-'
                 print("Tablero de la maquina\n", 'Has hecho Agua!\n', tablero_vacio)
+                time.sleep(3)
                 player2.player2(tablero_disparos_jugador, tablero_disparos_maquina, tablero_vacio, tablero_vacio2)
 
 
